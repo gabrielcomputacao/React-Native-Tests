@@ -1,8 +1,8 @@
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View } from "react-native";
 
-import { styles } from './styles';
-import { Input } from '@components/Input';
-import { CityProps } from '@services/getCityByNameService';
+import { styles } from "./styles";
+import { Input } from "@components/Input";
+import { CityProps } from "@services/getCityByNameService";
 
 type Props = {
   isLoading?: boolean;
@@ -11,12 +11,12 @@ type Props = {
   data: CityProps[];
   onChange: (value: string) => void;
   onPress: (value: CityProps) => void;
-}
+};
 
 export function SelectList(props: Props) {
   return (
-    <View style={styles.container}>
-      <Input        
+    <View style={styles.container} testID="options">
+      <Input
         placeholder={props.placeholder}
         onChangeText={props.onChange}
         isLoading={props.isLoading}
@@ -24,19 +24,15 @@ export function SelectList(props: Props) {
       />
 
       <View style={styles.options}>
-        {
-          props.data.map((item) => (
-            <TouchableOpacity
-              key={item.latitude}
-              activeOpacity={0.7}
-              onPress={() => props.onPress(item)}
-            >
-              <Text style={styles.title}>
-                {item.name}
-              </Text>
-            </TouchableOpacity>
-          ))
-        }
+        {props.data.map((item) => (
+          <TouchableOpacity
+            key={item.latitude}
+            activeOpacity={0.7}
+            onPress={() => props.onPress(item)}
+          >
+            <Text style={styles.title}>{item.name}</Text>
+          </TouchableOpacity>
+        ))}
       </View>
     </View>
   );
