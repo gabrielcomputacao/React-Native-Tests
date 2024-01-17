@@ -6,7 +6,8 @@
      "setupFilesAfterEnv": [
         "<rootDir>/setup-tests.js"
       ],
-      "setupFiles": ["./__tests__/mocks/libs/async-storage.js"],
+      "setupFiles": ["./__tests__/mocks/libs/async-storage.js",
+    "./__tests__/mocks/libs/react-native-safe-area-content.js"],
       "transform": {
         "^.+\\.jsx?$": "babel-jest",
         "^.+\\.svg$": "jest-transformer-svg"
