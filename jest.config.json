@@ -5,5 +5,7 @@
       ],
      "setupFilesAfterEnv": [
         "<rootDir>/setup-tests.js"
-      ]
+      ],
+      "setupFiles": ["./__tests__/mocks/libs/async-storage.js"]
+      
 }
